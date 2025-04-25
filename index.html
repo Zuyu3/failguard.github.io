@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning</title>
+  <meta name="description" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning">
+  <meta name="keywords" content="FailGuard">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning">
+  <!-- <meta property="og:image" content="https://openvla.github.io/static/images/teaser.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1939" />
+  <meta property="og:image:height" content="772" /> -->
+  <meta property="og:url" content="https://github.com/Zuyu3/failguard.github.io/" />
+  <meta property="og:description" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning" />
+  <meta name="twitter:title" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning" />
+  <meta name="twitter:description" content="FailGuard: A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning" />
+  <!-- <meta name="twitter:image" content="https://openvla.github.io/static/images/teaser.png" /> -->
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">FailGuard:<br><span style="font-size:2.4rem;">A Failure-Simulation Approach for Proactive Failure Detection in Visuomotor Policy Learning</span></h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="">Leiyu Wang</a><sup>*,1</sup>,
+              </span>
+            </div>
+            <!-- https://moojink.com/ -->
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup><font size="-0.4">*</sup>Equal contribution</font></span><br>
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=SIcPxapIgBI" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://colab.research.google.com/github/openvla/openvla/blob/main/examples/openvla.ipynb"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="static/images/colab_icon.png" />
+                    </span>
+                    <span>Let's try it!</span>
+                  </a>
+                </span> -->
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="hero teaser teaser-video">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline width="80%">
+          <source src="static/videos/openvla_teaser_video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src=""
+                type="video/mp4">
+      </video> -->
+
+        <img src="static/images/train.png" />
+
+        <h2 class="subtitle has-text-centered">
+          We introduce a method named FailGuard to achieve failure detection for robot visuomotor manipulation policy learning.
+
+          Due to the inefficient and potentially hazardous rollout for failure data collection in real world, we collect success trajectories from rollouts of the pre-trained policy and use Gaussian noise for data augmentation. Our model is then trained on the augmented trajectory data pairs. 
+          After trained with the collected data, the failure detector can achieve runtime failure detection and early stop the impending failure, improving the success rate and safety of the robot manipulation.
+
+          The experimental results shows that our proposed method outperforms several different kinds of baseline methods in both simulation environment and real world, and can effectively prevent failure cases during manipulation.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+    </div>
+  </section>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Simulation Experiments</h2>
+
+                <h3 class="title is-4">AUROC & AUPRC</h3>
+                <img src="static/images/simulation_main_exp.png" />
+                <div class="content has-text-justified">
+
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <p>
+                        We evaluate FailGuard's ability to detect OoD occurrence in Robomimic Simuation Benchmark. 
+                        Our method achieves optimal results under both metrics across all tasks, significantly outperforming most baselines.
+                        This indicates that our method excels in robotic manipulation failure detection task and demonstrates robustness across different policies.
+                      </p>
+                    </tr>
+                  </table>
+                </div>
+
+                <br>
+                <h3 class="title is-4">Real World Experiments</h3>
+                
+                <div class="content has-text-justified">
+                  <img src="static/images/real_main_exp.png" />
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="100%">
+                        <p>
+                          We test OpenVLA in three real world tasks: <strong>Pick Cube - Single</strong>, <strong>Pick Cube - Double</strong>, <strong>Bear to Bowl</strong>.
+                          our method achieves the best results on most tasks, demonstrating our FailGuard can work well in real world, consistent with the results obtained in simulation.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </div>
+                
+              <br>
+
+              <br>
+              <h3 class="title is-4">Real Restart Videos</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    Below are videos of the FailGuard restart experiments (Videos are sped up by _x.)
+                  </p>
+                </div>
+                <!-- <h4 class="title is-6">Real-World Restart Experiment Rollouts</h4> -->
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-success.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>Success trajectory<br>FailGuard doesn't trigger restart</h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-human-move.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>Manual interference<br>restart after failing to pick cube up</h5>
+                  </div>
+                </div>
+
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-air-reset.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>Interference in air<br>When moving in the air after the robot grasps the block, human disturbance causes the block to drop. FailGuard restart the manipulation</h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-fail-reset2.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>Multiple failed restarts<br>Multiple failures trigger restarts and eventually succeed</h5>
+                  </div>
+                </div>
+
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-no-cube.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>No Cube<br>restart because no cube on the table<br><br></h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/single-cube-human-move-reset.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Single</b><br>Multiple failed restarts<br>On the first execution, the human interference caused the block to be unclamped and the task failed. FailGuard restarts the task and fails again, causing a new restart. The third attempt was successful</h5>
+                  </div>
+                </div>
+
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/double-cube-success.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Double</b><br>Success trajectory<br>FailGuard doesn't trigger restart</h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/double-cube-fail-reset.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Double</b><br>Failure restart<br>FailGuard restarts a new execution after the first attempt fails</h5>
+                  </div>
+                </div>
+
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/double-cube-wrong-color-fail-reset2.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Pick Cube - Double</b><br>Wrong Color<br>No cube with target color on the table</h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/bear-bowl-success.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Bear to Bowl</b><br>Success trajectory<br>FailGuard doesn't trigger restart</h5>
+                  </div>
+                </div>
+
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/bear-bowl-fail-reset.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Bear to Bowl</b><br>Fail restart<br>FailGuard restarts a new execution after failure detected</h5>
+                  </div>
+
+                  <div class="column  has-text-centered">
+                    <video autoplay controls muted loop playsinline width="80%">
+                      <source src="static/videos/bear-bowl-human-move.mp4" type="video/mp4">
+                    </video>
+                    <h5><b>Bear to Bowl</b><br>Success trajectory<br>Human interference leads to failure and restart</h5>
+                  </div>
+                </div>
+
+
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <!-- <pre><code>@article{kim24openvla,
+            title={OpenVLA: An Open-Source Vision-Language-Action Model},
+            author={{Moo Jin} Kim and Karl Pertsch and Siddharth Karamcheti and Ted Xiao and Ashwin Balakrishna and Suraj Nair and Rafael Rafailov and Ethan Foster and Grace Lam and Pannag Sanketi and Quan Vuong and Thomas Kollar and Benjamin Burchfiel and Russ Tedrake and Dorsa Sadigh and Sergey Levine and Percy Liang and Chelsea Finn},
+            journal = {arXiv preprint arXiv:2406.09246},
+            year={2024},
+          } </code></pre> -->
+        </div>
+      </section>
+
+
+      <footer class="footer">
+        <div class="container">
+          <!-- <div class="content has-text-centered">
+            <a class="icon-link" href="https://arxiv.org/pdf/2210.05714.pdf">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+            <a class="icon-link" href="" class="external-link" disabled>
+              <i class="fab fa-github"></i>
+            </a>
+          </div> -->
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p> Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> under a <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+                    International</a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+</html>
